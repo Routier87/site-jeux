@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay">
+
+    <header>
+
+        <h1 class="title">
+            𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟
+        </h1>
+
+        <a href="TON_LIEN_DISCORD" target="_blank">
+            <img src="logo.png" class="logo" alt="Logo">
+        </a>
+
+    </header>
+
+    <div class="games-grid">
+
+        <!-- Jeu 1 -->
+        <div class="game-card"
+             onclick="openPopup(
+             '7 Days To Die ALL DLC',
+             'Version complète avec tous les DLC.',
+             'downloads/7daystodie.zip'
+             )">
+
+            <img src="7days.png" alt="">
+            <span>7 Days To Die ALL DLC</span>
+
+        </div>
+
+        <!-- Jeu 2 -->
+        <div class="game-card"
+             onclick="openPopup(
+             'Jurassic World Evolution 2',
+             'Version v1.3.1.36069',
+             'downloads/jurassic.zip'
+             )">
+
+            <img src="jurassic.png" alt="">
+            <span>Jurassic World Evolution 2</span>
+
+        </div>
+
+        <!-- 23 cases libres -->
+
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+
+    </div>
+
+</div>
+
+<div id="popup">
+
+    <div class="popup-content">
+
+        <button class="close-btn" onclick="closePopup()">✖</button>
+
+        <h2 id="popupTitle"></h2>
+
+        <p id="popupDesc"></p>
+
+        <a id="downloadBtn" href="#">
+            Télécharger
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+function openPopup(title, desc, link)
+{
+    document.getElementById("popupTitle").innerText = title;
+    document.getElementById("popupDesc").innerText = desc;
+    document.getElementById("downloadBtn").href = link;
+
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup()
+{
+    document.getElementById("popup").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
