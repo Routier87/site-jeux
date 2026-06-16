@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connexion Administration</title>
+<title>Connexion Admin</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="login-box">
 
 <h1>Administration</h1>
 
-<input type="text" id="username" placeholder="Identifiant">
+<input
+type="text"
+id="username"
+placeholder="Identifiant">
 
-<input type="password" id="password" placeholder="Mot de passe">
+<input
+type="password"
+id="password"
+placeholder="Mot de passe">
 
 <button onclick="login()">
 Connexion
 </button>
+
+<a href="index.html">
+Retour accueil
+</a>
 
 </div>
 
@@ -26,26 +38,36 @@ Connexion
 
 function login()
 {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+const user =
+document.getElementById("username").value;
 
-    /* MODIFIE ICI */
+const pass =
+document.getElementById("password").value;
 
-    const ADMIN_USER = "routier87";
-    const ADMIN_PASS = "878787";
+/* CHANGE ICI */
 
-    if(
-        username === ADMIN_USER &&
-        password === ADMIN_PASS
-    )
-    {
-        localStorage.setItem("adminLogged", "true");
-        window.location.href = "dashboard.html";
-    }
-    else
-    {
-        alert("Identifiant ou mot de passe incorrect");
-    }
+const ADMIN_USER = "routier87";
+const ADMIN_PASS = "878787";
+
+if(
+user === ADMIN_USER &&
+pass === ADMIN_PASS
+)
+{
+localStorage.setItem(
+"adminLogged",
+"true"
+);
+
+window.location.href =
+"dashboard.html";
+}
+else
+{
+alert(
+"Identifiant ou mot de passe incorrect"
+);
+}
 }
 
 </script>
