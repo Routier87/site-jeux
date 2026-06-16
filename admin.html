@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="admin-panel">
+
+    <h1>Gestion des jeux</h1>
+
+    <input type="text" id="name" placeholder="Nom du jeu">
+
+    <input type="text" id="image" placeholder="Image PNG">
+
+    <input type="text" id="download" placeholder="Lien téléchargement">
+
+    <button onclick="addGame()">
+        Ajouter
+    </button>
+
+</div>
+
+<script>
+
+function addGame(){
+
+    let games = JSON.parse(localStorage.getItem("games")) || [];
+
+    games.push({
+        name: document.getElementById("name").value,
+        image: document.getElementById("image").value,
+        download: document.getElementById("download").value
+    });
+
+    localStorage.setItem("games", JSON.stringify(games));
+
+    alert("Jeu ajouté !");
+}
+
+</script>
+
+</body>
+</html>
