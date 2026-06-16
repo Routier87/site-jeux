@@ -2,135 +2,39 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</title>
-
+<title>Connexion Admin</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
-<div class="overlay">
+<div class="login-box">
 
-<header>
+<h1>Administration</h1>
 
-<h1 class="title">
-𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟
-</h1>
+<input type="password"
+id="password"
+placeholder="Mot de passe">
 
-<a href="TON_LIEN_DISCORD" target="_blank">
-<img src="logo.png" class="logo" alt="Logo">
-</a>
-
-</header>
-
-<div class="games-grid">
-
-<!-- Jeu 1 -->
-
-<div class="game-card"
-onclick="openPopup(
-'7 Days To Die ALL DLC',
-'Version complète avec tous les DLC.',
-'downloads/7daystodie.zip'
-)">
-
-<img src="7days.png" alt="7 Days To Die">
-
-<span>
-7 Days To Die ALL DLC
-</span>
-
-</div>
-
-<!-- Jeu 2 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Jurassic World Evolution 2',
-'Version v1.3.1.36069',
-'downloads/jurassic.zip'
-)">
-
-<img src="jurassic.png" alt="Jurassic World Evolution 2">
-
-<span>
-Jurassic World Evolution 2
-</span>
-
-</div>
-
-<!-- Les jeux ajoutés depuis l'admin apparaîtront ici -->
-
-</div>
-
-</div>
-
-<!-- POPUP -->
-
-<div id="popup">
-
-<div class="popup-content">
-
-<button class="close-btn" onclick="closePopup()">
-✖
+<button onclick="login()">
+Connexion
 </button>
-
-<h2 id="popupTitle"></h2>
-
-<p id="popupDesc"></p>
-
-<a id="downloadBtn" href="#" target="_blank">
-Télécharger
-</a>
-
-</div>
 
 </div>
 
 <script>
 
-function openPopup(title, desc, link)
+function login()
 {
-    document.getElementById("popupTitle").innerText = title;
-    document.getElementById("popupDesc").innerText = desc;
-    document.getElementById("downloadBtn").href = link;
-
-    document.getElementById("popup").style.display = "flex";
-}
-
-function closePopup()
+if(document.getElementById("password").value === "routier87admin")
 {
-    document.getElementById("popup").style.display = "none";
+localStorage.setItem("adminLogged","true");
+window.location.href="dashboard.html";
 }
-
-/* Chargement des jeux ajoutés depuis admin */
-
-const games = JSON.parse(localStorage.getItem("games")) || [];
-
-const grid = document.querySelector(".games-grid");
-
-games.forEach(game => {
-
-    const card = document.createElement("div");
-
-    card.className = "game-card";
-
-    card.innerHTML = `
-        <img src="${game.image}" alt="${game.name}">
-        <span>${game.name}</span>
-    `;
-
-    card.onclick = () =>
-        openPopup(
-            game.name,
-            "Téléchargement disponible",
-            game.download
-        );
-
-    grid.appendChild(card);
-});
+else
+{
+alert("Mot de passe incorrect");
+}
+}
 
 </script>
 
