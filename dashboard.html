@@ -1,102 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dashboard</title>
-
+<title>Dashboard Admin</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
 <script>
-
-if(localStorage.getItem("adminLogged") !== "true")
-{
-window.location.href =
-"admin.html";
+if(localStorage.getItem("adminLogged") !== "true"){
+    window.location.href = "admin.html";
 }
-
 </script>
 
 <div class="admin-panel">
 
-<h1>Gestion des jeux</h1>
+<h1>Panel Admin</h1>
 
-<input
-type="text"
-id="name"
-placeholder="Nom du jeu">
+<input type="text" id="name" placeholder="Nom du jeu">
+<input type="text" id="download" placeholder="Lien téléchargement">
 
-<input
-type="text"
-id="image"
-placeholder="Image PNG">
+<!-- IMAGE UPLOAD -->
+<input type="file" id="imageFile" accept="image/*">
 
-<input
-type="text"
-id="download"
-placeholder="Lien téléchargement">
+<button onclick="addGame()">Ajouter jeu</button>
+<button onclick="logout()">Déconnexion</button>
 
-<button onclick="addGame()">
-Ajouter le jeu
-</button>
+<hr>
 
-<button onclick="logout()">
-Déconnexion
-</button>
+<h2>Jeux existants</h2>
 
-<a href="index.html">
-Retour accueil
-</a>
+<div id="list"></div>
 
 </div>
 
 <script>
 
-function addGame()
-{
-let games =
-JSON.parse(
-localStorage.getItem("games")
-)
-|| [];
-
-games.push({
-
-name:
-document.getElementById("name").value,
-
-image:
-document.getElementById("image").value,
-
-download:
-document.getElementById("download").value
-
-});
-
-localStorage.setItem(
-"games",
-JSON.stringify(games)
-);
-
-alert("Jeu ajouté !");
+function getGames(){
+    return JSON.parse(localStorage.getItem("games")) || [];
 }
 
-function logout()
-{
-localStorage.removeItem(
-"adminLogged"
-);
-
-window.location.href =
-"index.html";
+function saveGames(games){
+    localStorage.setItem("games", JSON.stringify(games));
+    renderList();
 }
+
+function addGame(){
+
+    const name = document.getElementById("name").value;
+    const download = document.getElementById("download").value;
+    const file = document.getElementById("imageFile").files[0];
+
+    if(!name || !download || !file){
+        alert("Remplis tout");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+        let games = getGames();
+
+        games.push({
+            id: Date.now(),
+            name: name,
+            download: download,
+            image: e.target.result
+        });
+
+        saveGames(games);
+
+        alert("Jeu ajouté !");
+    }
+
+    reader.readAsDataURL(file);
+}
+
+function deleteGame(id){
+
+    let games = getGames();
+
+    games = games.filter(g => g.id !== id);
+
+    saveGames(games);
+}
+
+function renderList(){
+
+    const list = document.getElementById("list");
+    const games = getGames();
+
+    list.innerHTML = "";
+
+    games.forEach(game => {
+
+        list.innerHTML += `
+        <div style="margin:10px;padding:10px;background:#222;border-radius:10px;">
+            <strong>${game.name}</strong>
+            <button onclick="deleteGame(${game.id})">Supprimer</button>
+        </div>
+        `;
+    });
+}
+
+function logout(){
+    localStorage.removeItem("adminLogged");
+    window.location.href = "index.html";
+}
+
+renderList();
 
 </script>
 
