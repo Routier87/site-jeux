@@ -1,30 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Dashboard</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
+<script>
+
+if(localStorage.getItem("adminLogged") !== "true")
+{
+window.location.href =
+"admin.html";
+}
+
+</script>
 
 <div class="admin-panel">
 
 <h1>Gestion des jeux</h1>
 
-<input type="text"
+<input
+type="text"
 id="name"
 placeholder="Nom du jeu">
 
-<input type="text"
+<input
+type="text"
 id="image"
 placeholder="Image PNG">
 
-<input type="text"
+<input
+type="text"
 id="download"
 placeholder="Lien téléchargement">
 
 <button onclick="addGame()">
-Ajouter
+Ajouter le jeu
 </button>
 
 <button onclick="logout()">
@@ -39,22 +59,24 @@ Retour accueil
 
 <script>
 
-if(localStorage.getItem("adminLogged") !== "true")
-{
-window.location.href = "admin.html";
-}
-
 function addGame()
 {
 let games =
-JSON.parse(localStorage.getItem("games"))
+JSON.parse(
+localStorage.getItem("games")
+)
 || [];
 
 games.push({
 
-name: document.getElementById("name").value,
-image: document.getElementById("image").value,
-download: document.getElementById("download").value
+name:
+document.getElementById("name").value,
+
+image:
+document.getElementById("image").value,
+
+download:
+document.getElementById("download").value
 
 });
 
@@ -68,8 +90,12 @@ alert("Jeu ajouté !");
 
 function logout()
 {
-localStorage.removeItem("adminLogged");
-window.location.href = "index.html";
+localStorage.removeItem(
+"adminLogged"
+);
+
+window.location.href =
+"index.html";
 }
 
 </script>
