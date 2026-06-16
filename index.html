@@ -2,39 +2,113 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Connexion Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="login-box">
+<div class="overlay">
 
-<h1>Administration</h1>
+<header>
 
-<input type="password"
-id="password"
-placeholder="Mot de passe">
+<h1 class="title">𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</h1>
 
-<button onclick="login()">
-Connexion
+<a href="TON_LIEN_DISCORD" target="_blank">
+<img src="logo.png" class="logo">
+</a>
+
+</header>
+
+<div class="games-grid">
+
+<div class="game-card"
+onclick="openPopup(
+'7 Days To Die ALL DLC',
+'Version complète avec tous les DLC.',
+'downloads/7daystodie.zip'
+)">
+<img src="7days.png">
+<span>7 Days To Die ALL DLC</span>
+</div>
+
+<div class="game-card"
+onclick="openPopup(
+'Jurassic World Evolution 2',
+'Version v1.3.1.36069',
+'downloads/jurassic.zip'
+)">
+<img src="jurassic.png">
+<span>Jurassic World Evolution 2</span>
+</div>
+
+</div>
+
+</div>
+
+<div id="adminButton" style="display:none;">
+<a href="dashboard.html" class="admin-btn">
+⚙ Administration
+</a>
+</div>
+
+<div id="popup">
+
+<div class="popup-content">
+
+<button class="close-btn" onclick="closePopup()">
+✖
 </button>
+
+<h2 id="popupTitle"></h2>
+
+<p id="popupDesc"></p>
+
+<a id="downloadBtn" href="#" target="_blank">
+Télécharger
+</a>
+
+</div>
 
 </div>
 
 <script>
 
-function login()
+function openPopup(title, desc, link)
 {
-if(document.getElementById("password").value === "routier87admin")
+document.getElementById("popupTitle").innerText = title;
+document.getElementById("popupDesc").innerText = desc;
+document.getElementById("downloadBtn").href = link;
+document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup()
 {
-localStorage.setItem("adminLogged","true");
-window.location.href="dashboard.html";
+document.getElementById("popup").style.display = "none";
 }
-else
+
+if(localStorage.getItem("adminLogged") === "true")
 {
-alert("Mot de passe incorrect");
+document.getElementById("adminButton").style.display = "block";
 }
-}
+
+const games = JSON.parse(localStorage.getItem("games")) || [];
+
+const grid = document.querySelector(".games-grid");
+
+games.forEach(game => {
+
+grid.innerHTML += `
+<div class="game-card"
+onclick="openPopup('${game.name}','Téléchargement disponible','${game.download}')">
+
+<img src="${game.image}">
+<span>${game.name}</span>
+
+</div>
+`;
+
+});
 
 </script>
 
