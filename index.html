@@ -22,12 +22,11 @@
 
 <div class="header-right">
 
-    <a href="TON_LIEN_DISCORD" target="_blank">
-        <img src="logo.png" class="logo" alt="Logo">
-    </a>
+<a href="TON_LIEN_DISCORD" target="_blank">
+<img src="logo.png" class="logo" alt="Logo">
+</a>
 
-    <!-- IMPORTANT : zone bouton admin -->
-    <div id="accountArea"></div>
+<div id="accountArea"></div>
 
 </div>
 
@@ -35,50 +34,50 @@
 
 <div class="games-grid">
 
-    <!-- Jeu 1 -->
+<!-- Jeu 1 -->
 
-    <div class="game-card"
-    onclick="openPopup(
-    '7 Days To Die ALL DLC',
-    'Version complète avec tous les DLC.',
-    'https://gofile.io/d/Ws1igI'
-    )">
+<div class="game-card"
+onclick="openPopup(
+'7 Days To Die ALL DLC',
+'Version complète avec tous les DLC.',
+'https://gofile.io/d/Ws1igI'
+)">
 
-        <img src="7days.png" alt="7 Days To Die">
+<img src="7days.png" alt="7 Days To Die">
 
-        <span>7 Days To Die ALL DLC</span>
+<span>7 Days To Die ALL DLC</span>
 
-    </div>
+</div>
 
-    <!-- Jeu 2 -->
+<!-- Jeu 2 -->
 
-    <div class="game-card"
-    onclick="openPopup(
-    'Jurassic World Evolution 2',
-    'Version v1.3.1.36069',
-    'https://gofile.io/d/9Opq6u'
-    )">
+<div class="game-card"
+onclick="openPopup(
+'Jurassic World Evolution 2',
+'Version v1.3.1.36069',
+'https://gofile.io/d/9Opq6u'
+)">
 
-        <img src="jurassic.png" alt="Jurassic">
+<img src="jurassic.png" alt="Jurassic">
 
-        <span>Jurassic World Evolution 2</span>
+<span>Jurassic World Evolution 2</span>
 
-    </div>
+</div>
 
-    <!-- Jeu 3 -->
+<!-- Jeu 3 -->
 
-    <div class="game-card"
-    onclick="openPopup(
-    'Quarantine Zone',
-    'Build 21507574',
-    'https://gofile.io/d/rTCo7g'
-    )">
+<div class="game-card"
+onclick="openPopup(
+'Quarantine Zone',
+'Build 21507574',
+'https://gofile.io/d/rTCo7g'
+)">
 
-        <img src="quarantinezone.png" alt="Quarantine Zone">
+<img src="quarantinezone.png" alt="Quarantine Zone">
 
-        <span>Quarantine Zone</span>
+<span>Quarantine Zone</span>
 
-    </div>
+</div>
 
 </div>
 
@@ -91,6 +90,7 @@
 <button class="close-btn" onclick="closePopup()">✖</button>
 
 <h2 id="popupTitle"></h2>
+
 <p id="popupDesc"></p>
 
 <a id="downloadBtn" href="#" target="_blank">
@@ -159,7 +159,7 @@ function closePopup()
 }
 
 /* =========================
-   JEUX DYNAMIQUES
+   JEUX AJOUTÉS PAR L'ADMIN
 ========================= */
 
 const games =
@@ -174,7 +174,7 @@ games.forEach(game => {
     card.className = "game-card";
 
     card.innerHTML = `
-        <img src="${game.image}">
+        <img src="${game.image}" alt="${game.name}">
         <span>${game.name}</span>
     `;
 
@@ -190,6 +190,8 @@ games.forEach(game => {
 });
 
 </script>
+
+</div>
 
 </body>
 
