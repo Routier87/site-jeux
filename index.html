@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <div class="overlay">
 
 <header>
 
-<h1 class="title">𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</h1>
+<h1 class="title">
+𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟
+</h1>
+
+<div class="header-right">
 
 <a href="TON_LIEN_DISCORD" target="_blank">
-<img src="logo.png" class="logo">
-<div id="accountArea"></div>
+<img src="logo.png" class="logo" alt="Logo">
 </a>
+
+<div id="accountArea"></div>
+
+</div>
 
 </header>
 
@@ -29,8 +42,13 @@ onclick="openPopup(
 'Version complète avec tous les DLC.',
 'downloads/7daystodie.zip'
 )">
-<img src="7days.png">
-<span>7 Days To Die ALL DLC</span>
+
+<img src="7days.png" alt="7 Days To Die">
+
+<span>
+7 Days To Die ALL DLC
+</span>
+
 </div>
 
 <div class="game-card"
@@ -39,18 +57,17 @@ onclick="openPopup(
 'Version v1.3.1.36069',
 'downloads/jurassic.zip'
 )">
-<img src="jurassic.png">
-<span>Jurassic World Evolution 2</span>
-</div>
+
+<img src="jurassic.png" alt="Jurassic">
+
+<span>
+Jurassic World Evolution 2
+</span>
 
 </div>
 
 </div>
 
-<div id="adminButton" style="display:none;">
-<a href="dashboard.html" class="admin-btn">
-⚙ Administration
-</a>
 </div>
 
 <div id="popup">
@@ -75,43 +92,81 @@ Télécharger
 
 <script>
 
+const accountArea =
+document.getElementById("accountArea");
+
+if(localStorage.getItem("adminLogged") === "true")
+{
+    accountArea.innerHTML = `
+        <a href="dashboard.html"
+        class="account-btn">
+            Dashboard
+        </a>
+
+        <button
+        class="logout-btn"
+        onclick="logout()">
+            Déconnexion
+        </button>
+    `;
+}
+else
+{
+    accountArea.innerHTML = `
+        <a href="admin.html"
+        class="account-btn">
+            Connexion
+        </a>
+    `;
+}
+
+function logout()
+{
+    localStorage.removeItem("adminLogged");
+    location.reload();
+}
+
 function openPopup(title, desc, link)
 {
-document.getElementById("popupTitle").innerText = title;
-document.getElementById("popupDesc").innerText = desc;
-document.getElementById("downloadBtn").href = link;
-document.getElementById("popup").style.display = "flex";
+    document.getElementById("popupTitle").innerText = title;
+    document.getElementById("popupDesc").innerText = desc;
+    document.getElementById("downloadBtn").href = link;
+
+    document.getElementById("popup").style.display = "flex";
 }
 
 function closePopup()
 {
-document.getElementById("popup").style.display = "none";
+    document.getElementById("popup").style.display = "none";
 }
 
-if(localStorage.getItem("adminLogged") === "true")
-{
-document.getElementById("adminButton").style.display = "block";
-}
+const games =
+JSON.parse(localStorage.getItem("games"))
+|| [];
 
-const games = JSON.parse(localStorage.getItem("games")) || [];
-
-const grid = document.querySelector(".games-grid");
+const grid =
+document.querySelector(".games-grid");
 
 games.forEach(game => {
 
-grid.innerHTML += `
-<div class="game-card"
-onclick="openPopup('${game.name}','Téléchargement disponible','${game.download}')">
+    grid.innerHTML += `
+    <div class="game-card"
+    onclick="openPopup(
+    '${game.name}',
+    'Téléchargement disponible',
+    '${game.download}'
+    )">
 
-<img src="${game.image}">
-<span>${game.name}</span>
+    <img src="${game.image}" alt="${game.name}">
 
-</div>
-`;
+    <span>${game.name}</span>
 
+    </div>
+    `;
 });
 
 </script>
 
 </body>
+
 </html>
