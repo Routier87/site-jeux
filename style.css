@@ -142,3 +142,23 @@ padding:12px;
 padding:12px;
 cursor:pointer;
 }
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.account-btn{
+    background:#00c3ff;
+    color:black;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+}
+
+.account-btn:hover{
+    transform:scale(1.05);
+}
