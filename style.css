@@ -162,3 +162,18 @@ cursor:pointer;
 .account-btn:hover{
     transform:scale(1.05);
 }
+
+.game-info{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px;
+    font-weight:bold;
+}
+
+.mode-icon{
+    width:22px;
+    height:22px;
+    object-fit:contain;
+}
