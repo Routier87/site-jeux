@@ -2,361 +2,278 @@
 <html lang="fr">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="overlay">
+    <div class="overlay">
 
-<header>
+        <header>
+            <h1 class="title">𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</h1>
+            <div class="header-right">
+                <a href="https://discord.gg/mK8SkcMe48" target="_blank">
+                    <img src="logo.png" class="logo" alt="Logo">
+                </a>
+                <div id="accountArea"></div>
+            </div>
+        </header>
 
-<h1 class="title">𝕣𝕠𝕦𝕥𝕚𝕖𝕣𝟠𝟟</h1>
+        <div class="games-grid">
+            <!-- Jeu 1 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    '7 Days To Die ALL DLC',
+                    'Version complète avec tous les DLC.',
+                    'https://gofile.io/d/Ws1igI',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="7days.png" alt="7 Days To Die">
+                <div class="game-mode">
+                    <img src="multijoueur.png" alt="Multijoueur">
+                </div>
+                <span>7 Days To Die ALL DLC</span>
+            </div>
 
-<div class="header-right">
+            <!-- Jeu 2 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'Jurassic World Evolution 2',
+                    'Version v1.3.1.36069',
+                    'https://gofile.io/d/9Opq6u',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="jurassic.png" alt="Jurassic">
+                <div class="game-mode">
+                    <img src="solo.png" alt="Solo">
+                </div>
+                <span>Jurassic World Evolution 2</span>
+            </div>
 
-<a href="https://discord.gg/mK8SkcMe48" target="_blank">
-<img src="logo.png" class="logo" alt="Logo">
-</a>
+            <!-- Jeu 3 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'Quarantine Zone',
+                    'Build 21507574',
+                    'https://gofile.io/d/rTCo7g',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="quarantinezone.png" alt="Quarantine Zone">
+                <div class="game-mode">
+                    <img src="solo.png" alt="Solo">
+                </div>
+                <span>Quarantine Zone</span>
+            </div>
 
-<div id="accountArea"></div>
+            <!-- Jeu 4 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'Gold Mining Simulator',
+                    '(v1.9.5.0)',
+                    'https://gofile.io/d/7YT1Po',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="GoldMiningSimulator.png" alt="Gold Mining Simulator">
+                <div class="game-mode">
+                    <img src="solo.png" alt="Solo">
+                </div>
+                <span>Gold Mining Simulator</span>
+            </div>
 
-</div>
+            <!-- Jeu 5 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'Forts ALL DLC',
+                    '(v1.9.5.0)',
+                    'https://gofile.io/d/vNjtX8',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="FortsALLDLC.png" alt="Forts ALL DLC">
+                <div class="game-mode">
+                    <img src="multijoueur.png" alt="multijoueur">
+                </div>
+                <span>Forts ALL DLC</span>
+            </div>
 
-</header>
+            <!-- Jeu 6 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'Sons Of The Forest',
+                    '(Build 03102025)',
+                    'https://gofile.io/d/VyXa6h',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="SonsOfTheForest.png" alt="Sons Of The Forest">
+                <div class="game-mode">
+                    <img src="multijoueur.png" alt="multijoueur">
+                </div>
+                <span>Sons Of The Forest</span>
+            </div>
 
-<div class="games-grid">
+            <!-- Jeu 7 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'Forza Horizon 6 ALL DLC',
+                    '(v364.933)',
+                    'https://gofile.io/d/tf6e8c',
+                    'Voici comment lancer Forza Horizon 6:\n\n1. Vérifiez bien que Steam est ouvert en fond\n2. Toujours lancer le jeu en Admin "forzahorizon6_loader.exe"\n3. Connectez-vous avec votre compte Microsoft/Xbox\n4. Pour inviter vos amis, exécutez le fichier Enable_Invites_FH6.bat en administrateur\n5. Pour jouer en multijoueur avec vos amis, vous devez les avoir en ami sur Xbox et les inviter via Xbox.\n\n⚠️ Multijoueur fonctionnel avec la version SITE ROUTIER87 & l'officielle ⚠️'
+                )">
+                <img src="ForzaHorizon6.png" alt="Forza Horizon 6 ALL DLC">
+                <div class="game-mode">
+                    <img src="multijoueur.png" alt="multijoueur">
+                </div>
+                <span>Forza Horizon 6 ALL DLC</span>
+            </div>
 
-<!-- Jeu 1 -->
+            <!-- Jeu 8 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'Satisfactory ALL DLC',
+                    'Build 06022026',
+                    'https://gofile.io/d/nP2NIR',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="Satisfactory.png" alt="Satisfactory ALL DLC">
+                <div class="game-mode">
+                    <img src="multijoueur.png" alt="Multijoueur">
+                </div>
+                <span>Satisfactory ALL DLC</span>
+            </div>
 
-<div class="game-card"
-onclick="openPopup(
-'7 Days To Die ALL DLC',
-'Version complète avec tous les DLC.',
-'https://gofile.io/d/Ws1igI'
-)">
+            <!-- Jeu 9 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'Dale and Dawson Stationery Supplies',
+                    'v1.2.1',
+                    'https://gofile.io/d/zj7ODE',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="DaleandDawsonStationerySupplies.png" alt="Dale and Dawson Stationery Supplies">
+                <div class="game-mode">
+                    <img src="multijoueur.png" alt="Multijoueur">
+                </div>
+                <span>Dale and Dawson Stationery Supplies</span>
+            </div>
 
-    <img src="7days.png" alt="7 Days To Die">
+            <!-- Jeu 10 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'Planet Coaster ALL DLC',
+                    'v1.13.2.4368',
+                    'https://gofile.io/d/FsvSfC',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="PlanetCoaster.png" alt="Planet Coaster ALL DLC">
+                <div class="game-mode">
+                    <img src="solo.png" alt="Solo">
+                </div>
+                <span>Planet Coaster ALL DLC</span>
+            </div>
 
-    <div class="game-mode">
-        <img src="multijoueur.png" alt="Multijoueur">
+            <!-- Jeu 11 -->
+            <div class="game-card"
+                onclick="openPopup(
+                    'RoadCraft ALL DLC',
+                    'v1.9.63.0',
+                    'https://gofile.io/d/PfzKj3',
+                    '??? Mettre votre message ???'
+                )">
+                <img src="RoadCraft.png" alt="RoadCraft ALL DLC">
+                <div class="game-mode">
+                    <img src="multijoueur.png" alt="Multijoueur">
+                </div>
+                <span>RoadCraft ALL DLC</span>
+            </div>
+        </div>
+
+        <!-- POPUP -->
+        <div id="popup">
+            <div class="popup-content">
+                <button class="close-btn" onclick="closePopup()">✖</button>
+                <h2 id="popupTitle"></h2>
+                <p id="popupDesc"></p>
+                <a id="downloadBtn" href="#" target="_blank">
+                    Télécharger
+                </a>
+            </div>
+        </div>
+
+        <script>
+            /* =========================
+               BOUTON ADMIN
+            ========================= */
+            const accountArea = document.getElementById("accountArea");
+
+            if (accountArea) {
+                if (localStorage.getItem("adminLogged") === "true") {
+                    accountArea.innerHTML = `
+                        <a href="dashboard.html" class="account-btn">
+                            Dashboard
+                        </a>
+                        <button class="logout-btn" onclick="logout()">
+                            Déconnexion
+                        </button>
+                    `;
+                } else {
+                    accountArea.innerHTML = `
+                        <a href="admin.html" class="account-btn">
+                            Connexion
+                        </a>
+                    `;
+                }
+            }
+
+            function logout() {
+                localStorage.removeItem("adminLogged");
+                location.reload();
+            }
+
+            /* =========================
+               POPUP
+            ========================= */
+            function openPopup(title, desc, link, message) {
+                document.getElementById("popupTitle").innerText = title;
+                document.getElementById("popupDesc").innerText = desc + "\n\n" + message;
+                document.getElementById("downloadBtn").href = link;
+                document.getElementById("popup").style.display = "flex";
+            }
+
+            function closePopup() {
+                document.getElementById("popup").style.display = "none";
+            }
+
+            /* =========================
+               JEUX AJOUTÉS PAR L'ADMIN
+            ========================= */
+            const games = JSON.parse(localStorage.getItem("games")) || [];
+            const grid = document.querySelector(".games-grid");
+
+            games.forEach(game => {
+                const card = document.createElement("div");
+                card.className = "game-card";
+                card.innerHTML = `
+                    <img src="${game.image}" alt="${game.name}">
+                    <div class="game-mode">
+                        <img src="${game.modeIcon}" alt="Mode">
+                    </div>
+                    <span>${game.name}</span>
+                `;
+                card.onclick = () => {
+                    openPopup(
+                        game.name,
+                        "Téléchargement disponible",
+                        game.download,
+                        "??? Mettre votre message ???"
+                    );
+                };
+                grid.appendChild(card);
+            });
+        </script>
+
     </div>
-
-    <span>7 Days To Die ALL DLC</span>
-
-</div>
-
-
-<!-- Jeu 2 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Jurassic World Evolution 2',
-'Version v1.3.1.36069',
-'https://gofile.io/d/9Opq6u'
-)">
-
-    <img src="jurassic.png" alt="Jurassic">
-
-    <div class="game-mode">
-        <img src="solo.png" alt="Solo">
-    </div>
-
-    <span>Jurassic World Evolution 2</span>
-
-</div>
-
-<!-- Jeu 3 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Quarantine Zone',
-'Build 21507574',
-'https://gofile.io/d/rTCo7g'
-)">
-
-<img src="quarantinezone.png" alt="Quarantine Zone">
-
-<div class="game-mode">
-    <img src="solo.png" alt="Solo">
-</div>
-
-<span>Quarantine Zone</span>
-
-</div>
-
-<!-- Jeu 4 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Gold Mining Simulator',
-'(v1.9.5.0)',
-'https://gofile.io/d/7YT1Po'
-)">
-
-<img src="GoldMiningSimulator.png" alt="Gold Mining Simulator">
-
-<div class="game-mode">
-    <img src="solo.png" alt="Solo">
-</div>
-    
-<span>Gold Mining Simulator</span>
-
-</div>
-
-<!-- Jeu 5 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Forts ALL DLC',
-'(v1.9.5.0)',
-'https://gofile.io/d/vNjtX8'
-)">
-
-<img src="FortsALLDLC.png" alt="Forts ALL DLC">
-
-<div class="game-mode">
-    <img src="multijoueur.png" alt="multijoueur">
-</div>
-    
-<span>Forts ALL DLC</span>
-
-</div>
-
-<!-- Jeu 6 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Sons Of The Forest',
-'(Build 03102025)',
-'https://gofile.io/d/VyXa6h'
-)">
-
-<img src="SonsOfTheForest.png" alt="Sons Of The Forest">
-
-<div class="game-mode">
-    <img src="multijoueur.png" alt="multijoueur">
-</div>
-    
-<span>Sons Of The Forest</span>
-
-</div>
-
-<!-- Jeu 7 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Forza Horizon 6 ALL DLC',
-'(v364.933)',
-'https://gofile.io/d/tf6e8c'
-)">
-
-<img src="ForzaHorizon6.png" alt="Forza Horizon 6 ALL DLC">
-
-<div class="game-mode">
-    <img src="multijoueur.png" alt="multijoueur">
-</div>
-    
-<span>Forza Horizon 6 ALL DLC</span>
-
-</div>
-
-<!-- Jeu 8 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Satisfactory ALL DLC',
-'Build 06022026',
-'https://gofile.io/d/nP2NIR'
-)">
-
-    <img src="Satisfactory.png" alt="Satisfactory ALL DLC">
-
-    <div class="game-mode">
-        <img src="multijoueur.png" alt="Multijoueur">
-    </div>
-
-    <span>Satisfactory ALL DLC </span>
-
-</div>
-
-<!-- Jeu 9 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Dale and Dawson Stationery Supplies',
-'v1.2.1',
-'https://gofile.io/d/zj7ODE'
-)">
-
-    <img src="DaleandDawsonStationerySupplies.png" alt="Dale and Dawson Stationery Supplies">
-
-    <div class="game-mode">
-        <img src="multijoueur.png" alt="Multijoueur">
-    </div>
-
-    <span>Dale and Dawson Stationery Supplies</span>
-
-</div>
-
-<!-- Jeu 10 -->
-
-<div class="game-card"
-onclick="openPopup(
-'Planet Coaster ALL DLC',
-'v1.13.2.4368',
-'https://gofile.io/d/FsvSfC'
-)">
-
-    <img src="PlanetCoaster.png" alt="Planet Coaster ALL DLC">
-
-    <div class="game-mode">
-        <img src="solo.png" alt="Solo">
-    </div>
-
-    <span>Planet Coaster ALL DLC</span>
-
-</div>
-
-<!-- Jeu 11 -->
-
-<div class="game-card"
-onclick="openPopup(
-'RoadCraft ALL DLC',
-'v1.9.63.0',
-'https://gofile.io/d/PfzKj3'
-)">
-
-    <img src="RoadCraft.png" alt="RoadCraft ALL DLC">
-
-    <div class="game-mode">
-        <img src="multijoueur.png" alt="Multijoueur">
-    </div>
-
-    <span>RoadCraft ALL DLC</span>
-
-</div>
-
-</div>
-
-<!-- POPUP -->
-
-<div id="popup">
-
-<div class="popup-content">
-
-<button class="close-btn" onclick="closePopup()">✖</button>
-
-<h2 id="popupTitle"></h2>
-
-<p id="popupDesc"></p>
-
-<a id="downloadBtn" href="#" target="_blank">
-Télécharger
-</a>
-
-</div>
-
-</div>
-
-<script>
-
-/* =========================
-   BOUTON ADMIN
-========================= */
-
-const accountArea =
-document.getElementById("accountArea");
-
-if(accountArea)
-{
-    if(localStorage.getItem("adminLogged") === "true")
-    {
-        accountArea.innerHTML = `
-            <a href="dashboard.html" class="account-btn">
-                Dashboard
-            </a>
-
-            <button class="logout-btn" onclick="logout()">
-                Déconnexion
-            </button>
-        `;
-    }
-    else
-    {
-        accountArea.innerHTML = `
-            <a href="admin.html" class="account-btn">
-                Connexion
-            </a>
-        `;
-    }
-}
-
-function logout()
-{
-    localStorage.removeItem("adminLogged");
-    location.reload();
-}
-
-/* =========================
-   POPUP
-========================= */
-
-function openPopup(title, desc, link)
-{
-    document.getElementById("popupTitle").innerText = title;
-    document.getElementById("popupDesc").innerText = desc;
-    document.getElementById("downloadBtn").href = link;
-
-    document.getElementById("popup").style.display = "flex";
-}
-
-function closePopup()
-{
-    document.getElementById("popup").style.display = "none";
-}
-
-/* =========================
-   JEUX AJOUTÉS PAR L'ADMIN
-========================= */
-
-const games =
-JSON.parse(localStorage.getItem("games")) || [];
-
-const grid =
-document.querySelector(".games-grid");
-
-games.forEach(game => {
-
-    const card = document.createElement("div");
-    card.className = "game-card";
-
-    card.innerHTML = `
-        <img src="${game.image}" alt="${game.name}">
-        <span>${game.name}</span>
-    `;
-
-    card.onclick = () => {
-        openPopup(
-            game.name,
-            "Téléchargement disponible",
-            game.download
-        );
-    };
-
-    grid.appendChild(card);
-});
-
-</script>
-
-</div>
 
 </body>
 
